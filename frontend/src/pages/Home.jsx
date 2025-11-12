@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react"; // Hooks de React
 
-//Importación de imágenes
 import shirimhero from "../assets/imgsHero/shirimhero.jpg";
 import fishcate from "../assets/imgsHero/fishcate.jpeg";
 import Crustaceos from "../assets/imgsHero/Crustaceos.jpeg";
@@ -12,6 +11,7 @@ import langostinoHome from "../assets/imgsHero/langostinoHome.jpeg";
 import mix from "../assets/imgsHero/mix.jpeg";
 import hero2 from "../assets/imgsHero/Hero1.jpg";
 import hero3 from "../assets/imgsHero/Hero2.jpg";
+
 import { Fish, CreditCard, ShieldCheck, Truck, ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function Home() {

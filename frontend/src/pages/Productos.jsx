@@ -118,8 +118,6 @@ export default function Productos() {
 
   return (
     <>
-      <Navbar />
-
       <section className="container mx-auto px-4 py-10">
         <h1 className="text-3xl font-bold text-gray-800 mb-8 text-center">
           Nuestros Productos
@@ -139,8 +137,6 @@ export default function Productos() {
           </p>
         )}
       </section>
-
-      <Footer />
     </>
   );
 }

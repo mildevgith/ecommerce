@@ -1,5 +1,7 @@
+// src/components/Navbar.jsx
 import { useState } from "react";
-import {  Menu,
+import {
+  Menu,
   X,
   Search,
   ShoppingCart,
@@ -8,9 +10,8 @@ import {  Menu,
   Home,
   Phone,
   Info,
-}
-
-from "lucide-react";
+} from "lucide-react";
+import { Link } from "react-router-dom"; // 👈 Importamos Link de React Router
 import logo from "../assets/imgsHero/logo.png";
 import slogan from "../assets/imgsHero/slogan.png";
 
@@ -22,7 +23,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo + Slogan */}
-          <a href="/" className="flex items-center gap-2">
+          <Link to="/" className="flex items-center gap-2">
             <img
               src={logo}
               alt="Logo"
@@ -33,7 +34,7 @@ export default function Navbar() {
               alt="Slogan Expomarket"
               className="h-8 w-auto sm:h-10 block"
             />
-          </a>
+          </Link>
 
           {/* Buscador central (solo escritorio) */}
           <div className="hidden md:flex flex-1 justify-center">
@@ -51,24 +52,42 @@ export default function Navbar() {
 
           {/* Enlaces escritorio */}
           <div className="hidden md:flex items-center space-x-6 text-[#1a237e] font-medium">
-            <a href="/" className="flex items-center gap-1 hover:text-[#ff9800] transition">
+            <Link
+              to="/"
+              className="flex items-center gap-1 hover:text-[#ff9800] transition"
+            >
               <Home size={15} /> Inicio
-            </a>
-            <a href="/ofertas" className="flex items-center gap-1 hover:text-[#ff9800] transition">
+            </Link>
+            <Link
+              to="/ofertas"
+              className="flex items-center gap-1 hover:text-[#ff9800] transition"
+            >
               <Tag size={15} /> Ofertas
-            </a>
-            <a href="/nosotros" className="flex items-center gap-1 hover:text-[#ff9800] transition">
+            </Link>
+            <Link
+              to="/nosotros"
+              className="flex items-center gap-1 hover:text-[#ff9800] transition"
+            >
               <Info size={15} /> Nosotros
-            </a>
-            <a href="/contacto" className="flex items-center gap-1 hover:text-[#ff9800] transition">
+            </Link>
+            <Link
+              to="/contacto"
+              className="flex items-center gap-1 hover:text-[#ff9800] transition"
+            >
               <Phone size={15} /> Contacto
-            </a>
-            <a href="/cuenta" className="flex items-center gap-1 hover:text-[#ff9800] transition">
+            </Link>
+            <Link
+              to="/cuenta"
+              className="flex items-center gap-1 hover:text-[#ff9800] transition"
+            >
               <User size={15} /> Cuenta
-            </a>
-            <a href="/carrito" className="flex items-center gap-1 hover:text-[#ff9800] transition">
+            </Link>
+            <Link
+              to="/carrito"
+              className="flex items-center gap-1 hover:text-[#ff9800] transition"
+            >
               <ShoppingCart size={15} /> Carrito
-            </a>
+            </Link>
           </div>
 
           {/* Menú móvil */}
@@ -105,22 +124,23 @@ export default function Navbar() {
               </button>
             </div>
 
-            {/* Links de navegación */}
+            {/* Links de navegación móvil */}
             {[
-              { label: "Inicio", href: "/", icon: <Home size={18} /> },
-              { label: "Ofertas", href: "/ofertas", icon: <Tag size={18} /> },
-              { label: "Nosotros", href: "/nosotros", icon: <Info size={18} /> },
-              { label: "Contacto", href: "/contacto", icon: <Phone size={18} /> },
-              { label: "Mi Cuenta", href: "/cuenta", icon: <User size={18} /> },
-              { label: "Carrito", href: "/carrito", icon: <ShoppingCart size={18} /> },
+              { label: "Inicio", to: "/", icon: <Home size={18} /> },
+              { label: "Ofertas", to: "/ofertas", icon: <Tag size={18} /> },
+              { label: "Nosotros", to: "/nosotros", icon: <Info size={18} /> },
+              { label: "Contacto", to: "/contacto", icon: <Phone size={18} /> },
+              { label: "Mi Cuenta", to: "/cuenta", icon: <User size={18} /> },
+              { label: "Carrito", to: "/carrito", icon: <ShoppingCart size={18} /> },
             ].map((item, index) => (
-              <a
+              <Link
                 key={index}
-                href={item.href}
+                to={item.to}
+                onClick={() => setMenuOpen(false)} // Cierra el menú al hacer clic
                 className="flex items-center gap-2 py-2 border-b text-gray-700 hover:text-[#ff9800] transition"
               >
                 {item.icon} {item.label}
-              </a>
+              </Link>
             ))}
           </div>
         </div>
@@ -128,4 +148,3 @@ export default function Navbar() {
     </nav>
   );
 }
-
