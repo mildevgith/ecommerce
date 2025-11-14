@@ -13,6 +13,7 @@ import ProductoDetalle from "./pages/ProductoDetalle";
 import Checkout from "./pages/Checkout";
 import Confirmacion from "./pages/Confirmacion";
 import Footer from "./components/Footer";
+import ProductoCategoria from "./pages/ProductoCategoria";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
         <Route path="productos" element={<Productos />} />
+        <Route path="productos/:categoria" element={<ProductoCategoria />} />
         <Route path="ofertas" element={<Ofertas />} />
         <Route path="nosotros" element={<Nosotros />} />
         <Route path="contacto" element={<Contacto />} />
@@ -28,7 +30,7 @@ function App() {
         <Route path="cuenta" element={<Cuenta />} />
         <Route path="login" element={<Login />} />
         <Route path="registro" element={<Registro />} />
-        <Route path="producto/:id" element={<ProductoDetalle />} />
+        <Route path="productoDetalle/:id" element={<ProductoDetalle />} />
         <Route path="checkout" element={<Checkout />} />
         <Route path="confirmacion" element={<Confirmacion />} />
       </Route>
