@@ -22,11 +22,9 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
-dist
-dist-ssr
-*.local
-
+# Ignorar dist global excepto el de frontend
 !frontend/dist/
+*.local
 
 # Editor directories and files
 .vscode/*
