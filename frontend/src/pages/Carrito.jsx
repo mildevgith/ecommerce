@@ -1,25 +1,25 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import anillosHome from "../assets/imgsHero/anillosHome.jpeg";
+import fileteTilapia from "../assets/imgsHero/fileteTilapia.jpeg";
 import CartItem from "../components/CartItem";
 
 export default function Carrito() {
   const [carrito, setCarrito] = useState([
     {
       id: 1,
-      nombre: "Langostinos Jumbo",
-      precio: 35000,
+      nombre: "Anillos de calamar",
+      precio: 35.000,
       cantidad: 2,
-      imagen:
-        "https://images.unsplash.com/photo-1603217192223-3b681b69f110?auto=format&fit=crop&w=600&q=80",
+      imagen: anillosHome,
     },
     {
       id: 2,
       nombre: "Filete de Tilapia",
-      precio: 22000,
+      precio: 22.000,
       cantidad: 1,
-      imagen:
-        "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?auto=format&fit=crop&w=600&q=80",
+      imagen: fileteTilapia,
     },
   ]);
 

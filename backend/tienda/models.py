@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # This is an auto-generated Django model module.
 # You'll have to do the following manually to clean this up:
 #   * Rearrange models' order
@@ -284,3 +285,8 @@ class TiendaResenaproducto(models.Model):
     class Meta:
         managed = False
         db_table = 'tienda_resenaproducto'
+=======
+from django.db import models
+
+# Create your models here.
+>>>>>>> 3b601cf9004a6c20d9cfb7426638ec1e546cc85c
